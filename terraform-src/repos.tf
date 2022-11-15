@@ -13,8 +13,9 @@ module "jeremy-open-source-terraform" {
   description = <<EOF
 Jeremy Open Source Terraform
 EOF
-  gitlab_group_id = gitlab_group.jeremy-open-source.id
   request_access_enabled = false
+  pipelines_enabled = true
+  gitlab_group_id = gitlab_group.jeremy-open-source.id
   github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
   github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
 }
