@@ -1,3 +1,12 @@
+module "iso-creator-cloud-init" {
+  source = "./modules/repo-shared-synced"
+  name = "iso-creator-cloud-init"
+  description = "Cloud-init ISO Creator"
+  gitlab_group_id = gitlab_group.jeremy-open-source.id
+  github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
+  github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
+}
+
 module "simple-gitlab-build-agent" {
   source = "./modules/repo-shared-synced"
   name = "simple-gitlab-build-agent"
