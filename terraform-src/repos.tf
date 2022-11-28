@@ -1,3 +1,12 @@
+module "python-docker-cli-cookiecutter" {
+  source = "./modules/repo-shared-synced"
+  name = "python-docker-cli-cookiecutter"
+  description = "Python Docker CLI Cookiecutter"
+  gitlab_group_id = gitlab_group.jeremy-open-source.id
+  github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
+  github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
+}
+
 module "iso-creator-cloud-init" {
   source = "./modules/repo-shared-synced"
   name = "iso-creator-cloud-init"
