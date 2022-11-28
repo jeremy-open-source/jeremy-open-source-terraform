@@ -1,3 +1,12 @@
+module "project-details-collector" {
+  source = "./modules/repo-shared-synced"
+  name = "project-details-collector"
+  description = "Project details collector service"
+  gitlab_group_id = gitlab_group.jeremy-open-source.id
+  github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
+  github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
+}
+
 module "python-docker-cli-cookiecutter" {
   source = "./modules/repo-shared-synced"
   name = "python-docker-cli-cookiecutter"
