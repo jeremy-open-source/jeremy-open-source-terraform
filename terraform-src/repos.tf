@@ -1,3 +1,14 @@
+module "docker-containers" {
+  source = "./modules/repo-shared-synced"
+  name = "docker-containers"
+  description = "Open source Docker containers (Dockerization)"
+  pipelines_enabled = true
+  container_registry_enabled = true
+  gitlab_group_id = gitlab_group.jeremy-open-source.id
+  github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
+  github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
+}
+
 module "airflow-docker" {
   source = "./modules/repo-shared-synced"
   name = "airflow-docker"
