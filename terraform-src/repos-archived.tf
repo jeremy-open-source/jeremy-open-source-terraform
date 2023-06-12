@@ -1,3 +1,13 @@
+module "simple-gitlab-build-agent" {
+  archived = true
+  source = "./modules/repo-shared-synced"
+  name = "simple-gitlab-build-agent"
+  description = "Simple Gitlab build agent in docker-compose"
+  gitlab_group_id = gitlab_group.jeremy-open-source.id
+  github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
+  github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
+}
+
 module "esp-stack-trace-decoder-docker" {
   archived = true
   source = "./modules/repo-shared-synced"
