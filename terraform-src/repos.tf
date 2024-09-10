@@ -2,8 +2,8 @@ module "docker-containers" {
   source = "./modules/repo-shared-synced"
   name = "docker-containers"
   description = "Open source Docker containers (Dockerization)"
-  pipelines_enabled = true
-  container_registry_enabled = true
+  builds_access_level = "enabled"
+  container_registry_access_level = "enabled"
   gitlab_group_id = gitlab_group.jeremy-open-source.id
   github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
   github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
@@ -40,7 +40,7 @@ module "ci-test" {
   source = "./modules/repo-shared-synced"
   name = "ci-test"
   description = "CI test repo"
-  pipelines_enabled = true
+  builds_access_level = "enabled"
   gitlab_group_id = gitlab_group.jeremy-open-source.id
   github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
   github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
@@ -53,7 +53,7 @@ module "jeremy-open-source-terraform" {
 Jeremy Open Source Terraform
 EOF
   request_access_enabled = false
-  pipelines_enabled = true
+  builds_access_level = "enabled"
   gitlab_group_id = gitlab_group.jeremy-open-source.id
   github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
   github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
@@ -63,8 +63,8 @@ module "http-test-container" {
   source = "./modules/repo-shared-synced"
   name = "http-test-container"
   description = "Docker container to test HTTP"
-  pipelines_enabled = true
-  container_registry_enabled = true
+  builds_access_level = "enabled"
+  container_registry_access_level = "enabled"
   gitlab_group_id = gitlab_group.jeremy-open-source.id
   github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
   github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
