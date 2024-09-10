@@ -1,3 +1,14 @@
+module "cura-docker-web-service" {
+  source = "./modules/repo-shared-synced"
+  name = "cura-docker-web-service"
+  description = "A Dockerized, headless version of Cura with a FastAPI web server, enabling remote access and control through an integrated web-based VNC interface."
+  builds_access_level = "enabled"
+  container_registry_access_level = "enabled"
+  gitlab_group_id = gitlab_group.jeremy-open-source.id
+  github_sync_in_username = var.GITHUB_SYNC_IN_USERNAME
+  github_sync_in_password = var.GITHUB_SYNC_IN_PASSWORD
+}
+
 module "docker-containers" {
   source = "./modules/repo-shared-synced"
   name = "docker-containers"
