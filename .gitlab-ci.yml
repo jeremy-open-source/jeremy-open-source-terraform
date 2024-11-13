@@ -40,15 +40,15 @@ plan:
     reports:
       terraform: $PLAN_SUMMARY
 
-apply:
-  stage: apply
-  retry: 0
-  image: registry.gitlab.com/jeremy-open-source/terraform-docker:ubuntu2204
-  before_script:
-    - doppler run -- bash -c "./bin/init.sh"
-  script:
-    - doppler run -- bash -c "terraform apply -auto-approve -input=false $PLAN"
-  dependencies:
-    - plan
-  only:
-    - master
+# apply:
+#   stage: apply
+#   retry: 0
+#   image: registry.gitlab.com/jeremy-open-source/terraform-docker:ubuntu2204
+#   before_script:
+#     - doppler run -- bash -c "./bin/init.sh"
+#   script:
+#     - doppler run -- bash -c "terraform apply -auto-approve -input=false $PLAN"
+#   dependencies:
+#     - plan
+#   only:
+#     - master
